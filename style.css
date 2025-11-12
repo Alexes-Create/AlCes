@@ -1,0 +1,104 @@
+:root {
+  --bg: linear-gradient(135deg, #0f172a, #1e293b);
+  --accent1: #06b6d4; /* cyan */
+  --accent2: #7c3aed; /* purple */
+  --text: #f1f5f9;
+  --glass: rgba(255, 255, 255, 0.05);
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Reset and base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', Arial, sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  margin: 20px; /* from inline demo */
+}
+
+/* Header */
+header {
+  background: var(--glass);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--shadow);
+  padding: 1.5rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+header h1 {
+  font-size: 1.8rem;
+  color: var(--accent1);
+}
+
+/* Navigation */
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  margin-left: 2rem;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: var(--accent2);
+}
+
+/* Main Content */
+main {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+section {
+  background: var(--glass);
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
+}
+
+section:hover {
+  transform: translateY(-5px);
+}
+
+/* Lists */
+ul {
+  margin: 10px 0; /* from inline demo */
+}
+
+/* Buttons */
+button, .btn {
+  background: var(--accent1);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+button:hover, .btn:hover {
+  background: var(--accent2);
+  transform: scale(1.05);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 3rem;
+  background: var(--glass);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 10px; /* from inline demo */
+  border-top: 1px solid #ccc; /* merged style */
+}
