@@ -91,6 +91,45 @@ button:hover, .btn:hover {
   background: var(--accent2);
   transform: scale(1.05);
 }
+/* CATEGORY TITLE BOX */
+.category-box {
+  background-color: #374151; /* gray-700 */
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.15);
+  transition: 0.2s ease;
+}
+
+.category-box h3 {
+  color: #ffffff;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.category-box:hover {
+  background-color: #4b5563; /* gray-600 */
+  transform: scale(1.03);
+}
+
+/* SKILL CARDS (already centered) */
+.skill-card {
+  background-color: #374151;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  text-align: center;
+  transition: 0.2s ease;
+}
+
+.skill-card:hover {
+  background-color: #4b5563;
+  transform: scale(1.03);
+}
+
+.skill-card p {
+  color: #d1d5db;
+}
+
 
 /* Footer */
 footer {
