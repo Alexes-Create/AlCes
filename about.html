@@ -36,6 +36,95 @@
       </p>
     </section>
   </main>
+  <!-- Favorites Section with Tabs -->
+<section id="favorites" class="container mx-auto px-6 py-20">
+  <h2 class="text-3xl font-bold text-cyan-400 mb-12 text-center">My Favorites</h2>
+
+  <!-- Tabs -->
+  <div class="flex justify-center mb-8 space-x-4">
+    <button class="tab-btn px-4 py-2 bg-cyan-400 text-gray-900 rounded-full font-semibold" data-tab="movies">Movies</button>
+    <button class="tab-btn px-4 py-2 bg-gray-700 text-gray-100 rounded-full font-semibold" data-tab="animes">Animes</button>
+    <button class="tab-btn px-4 py-2 bg-gray-700 text-gray-100 rounded-full font-semibold" data-tab="sports">Sports</button>
+    <button class="tab-btn px-4 py-2 bg-gray-700 text-gray-100 rounded-full font-semibold" data-tab="books">Books</button>
+    <button class="tab-btn px-4 py-2 bg-gray-700 text-gray-100 rounded-full font-semibold" data-tab="games">Video Games</button>
+  </div>
+
+  <!-- Tab Content -->
+  <div>
+    <!-- Movies -->
+    <div class="tab-content grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6" data-content="movies">
+      <div class="favorite-card"><img src="https://i.pinimg.com/736x/da/a7/d4/daa7d42b185dcccf897359c8a4b8e4e7.jpg" alt="Movie 1"><p>Dead Poets Society</p></div>
+      <div class="favorite-card"><img src="https://i.pinimg.com/1200x/3c/21/88/3c2188ca13367cb40df4a676735bfa08.jpg" alt="Movie 2"><p>The Greatest Showman</p></div>
+      <div class="favorite-card"><img src="https://i.pinimg.com/736x/a9/6a/00/a96a002732d97f46655bb7ed7a616db5.jpg" alt="Movie 3"><p>Lord of the Rings</p></div>
+      <div class="favorite-card"><img src="https://i.pinimg.com/1200x/48/d0/8f/48d08ff2d369db958d83218ca7e974dc.jpg" alt="Movie 4"><p>Klaus</p></div>
+      <div class="favorite-card"><img src="https://i.pinimg.com/736x/f7/26/d7/f726d7e27d05f5cbc78c53d0e9e0abac.jpg" alt="Movie 5"><p>Star Wars</p></div>
+    </div>
+
+    <!-- Animes -->
+    <div class="tab-content hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6" data-content="animes">
+      <div class="favorite-card"><img src="https://i.pinimg.com/736x/42/89/a8/4289a867bb8954fe902ade535794c42a.jpg" alt="Anime 1"><p>One Piece</p></div>
+      <div class="favorite-card"><img src="https://i.pinimg.com/736x/db/7a/7a/db7a7a944f7def50fec606122da2c01e.jpg" alt="Anime 2"><p>Naruto</p></div>
+      <div class="favorite-card"><img src="https://i.pinimg.com/1200x/a7/34/34/a73434fb36c30056bff4a06e09e0c8ad.jpg/" alt="Anime 3"><p>Full Metal Alchemist: Brotherhood</p></div>
+      <div class="favorite-card"><img src="https://i.pinimg.com/736x/94/24/db/9424db9cd8b3833b549ec93a4433e207.jpg" alt="Anime 4"><p>Hajime no Ippo</p></div>
+      <div class="favorite-card"><img src="https://i.pinimg.com/1200x/d6/3a/f9/d63af9124f05fae0a13be1157eb9c2e9.jpg" alt="Anime 5"><p>Katekyo Hitman Reborn</p></div>
+    </div>
+
+    <!-- Sports -->
+    <div class="tab-content hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6" data-content="sports">
+      <div class="favorite-card"><img src="https://i.pinimg.com/736x/38/03/0f/38030f4ed86cf4902ebf8222517486e1.jpg" alt="Sport 1"><p>Chess</p></div>
+      <div class="favorite-card"><img src="https://i.pinimg.com/736x/f3/bf/81/f3bf81100a196a774dab0f993b852bd0.jpg" alt="Sport 2"><p>Running</p></div>
+      <div class="favorite-card"><img src="https://i.pinimg.com/736x/05/af/28/05af28fcde7846989074111c982671ca.jpg" alt="Sport 3"><p>Cycling</p></div>
+      <div class="favorite-card"><img src="https://i.pinimg.com/736x/2e/8b/3d/2e8b3d634b9cd14891bfbb00d0c4e7b5.jpg" alt="Sport 4"><p>Badminton</p></div>
+      <div class="favorite-card"><img src="https://i.pinimg.com/736x/69/2e/c7/692ec728731f43772bb3588a8552d7e7.jpg" alt="Sport 5"><p>Volleyball</p></div>
+    </div>
+
+    <!-- Books -->
+    <div class="tab-content hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6" data-content="books">
+      <div class="favorite-card"><img src="https://i.pinimg.com/1200x/29/89/56/2989569e206c20a18f8d3b748c445795.jpg" alt="Book 1"><p>The Subtle Art Of Not Giving A Fuck</p></div>
+      <div class="favorite-card"><img src="https://i.pinimg.com/1200x/49/50/f6/4950f6fa38c3e519174e3adedf59c5a2.jpg" alt="Book 2"><p>Frankenstien</p></div>
+      <div class="favorite-card"><img src="https://i.pinimg.com/736x/76/90/3c/76903c9a0a33a5ac085d89e3aec5cc9f.jpg" alt="Book 3"><p>Moby Dick</p></div>
+      <div class="favorite-card"><img src="https://i.pinimg.com/736x/e7/8c/a9/e78ca907a9fc1f15d37e0451cb90e55c.jpg" alt="Book 4"><p>The Alchemist</p></div>
+      <div class="favorite-card"><img src="https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1677810120i/21809189.jpg" alt="Book 5"><p>Financial Planning For The Fast Changing World</p></div>
+      <div class="favorite-card"><img src="https://i.pinimg.com/736x/89/8e/92/898e9288a46b69c5d077447923016dbd.jpg" alt="Book 5"><p>The Bible</p></div>
+    </div>
+
+    <!-- Video Games -->
+    <div class="tab-content hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6" data-content="games">
+      <div class="favorite-card"><img src="https://i.pinimg.com/1200x/09/1d/37/091d371866ebbc9b858ac76fe6d1c2f7.jpg" alt="Game 1"><p>Dota 2</p></div>
+      <div class="favorite-card"><img src="https://i.pinimg.com/736x/22/fb/f0/22fbf07f63bc52ff05c8a2d297cf2b52.jpg" alt="Game 2"><p>CrossFire</p></div>
+      <div class="favorite-card"><img src="https://i.pinimg.com/736x/0d/de/f5/0ddef5002d19cbc17dcc89b0b71fe4cd.jpg" alt="Game 3"><p>CounterStrike</p></div>
+      <div class="favorite-card"><img src="https://i.pinimg.com/1200x/ad/50/9a/ad509adea0bb2c7ca798bd8b5074819d.jpg" alt="Game 4"><p>Ran Online</p></div>
+      <div class="favorite-card"><img src="https://i.pinimg.com/1200x/4b/28/6a/4b286acb84187debc7b28248426eaac5.jpg" alt="Game 5"><p>Call of Duty Mobile</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- JS for Tabs -->
+<script>
+  const tabs = document.querySelectorAll('.tab-btn');
+  const contents = document.querySelectorAll('.tab-content');
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      // Remove active class from all tabs
+      tabs.forEach(t => {
+        t.classList.remove('bg-cyan-400', 'text-gray-900');
+        t.classList.add('bg-gray-700', 'text-gray-100');
+      });
+
+      // Hide all content
+      contents.forEach(c => c.classList.add('hidden'));
+
+      // Activate current tab
+      tab.classList.add('bg-cyan-400', 'text-gray-900');
+      tab.classList.remove('bg-gray-700', 'text-gray-100');
+
+      // Show current content
+      document.querySelector(`[data-content="${tab.dataset.tab}"]`).classList.remove('hidden');
+      
+    });
+  });
+</script>
 
   <!-- Footer -->
   <footer class="bg-gray-800 py-6 mt-auto">
@@ -44,4 +133,5 @@
 
 </body>
 </html>
+
 
