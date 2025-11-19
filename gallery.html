@@ -28,20 +28,48 @@
   </header>
 
   <!-- Main Content -->
-  <main class="max-w-5xl mx-auto px-6 py-12">
+  <main class="max-w-6xl mx-auto px-6 py-12">
     <section>
       <h2 class="text-3xl font-bold text-cyan-400 mb-4">Creative Snapshots</h2>
       <p class="text-gray-300 mb-8">Glimpse of my life as a Shiftee/Transferee Student</p>
 
+      <!-- Gallery Grid -->
       <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-        <img src="IMG_20250921_171138_121.jpg" alt="Snapshot 1" class="w-full rounded-lg border border-gray-700">
-        <img src="Screenshot 2025-11-17 202458.png" alt="Flipbook Project" class="w-full rounded-lg border border-gray-700">
-        <img src="IMG_20241226_172809_461.jpg" alt="Snapshot 2" class="w-full rounded-lg border border-gray-700">
-        <img src="IMG_20241227_121003_125.jpg" alt="Snapshot 3" class="w-full rounded-lg border border-gray-700">
-        <img src="IMG_20250426_210940_710.jpg" alt="Snapshot 4" class="w-full rounded-lg border border-gray-700">
-        <img src="IMG_20241226_172809_461.jpg" alt="Snapshot 2 duplicate" class="w-full rounded-lg border border-gray-700">
-        <img src="IMG_20250205_095553_433.jpg" alt="Snapshot 5" class="w-full rounded-lg border border-gray-700">
+        <a href="#img1">
+          <img src="IMG_20250921_171138_121.jpg" alt="Snapshot 1" class="w-full rounded-lg border border-gray-700 transform transition duration-300 hover:scale-105 hover:shadow-xl">
+        </a>
+        <a href="#img2">
+          <img src="Screenshot 2025-11-17 202458.png" alt="Flipbook Project" class="w-full rounded-lg border border-gray-700 transform transition duration-300 hover:scale-105 hover:shadow-xl">
+        </a>
+        <a href="#img3">
+          <img src="IMG_20241226_172809_461.jpg" alt="Snapshot 2" class="w-full rounded-lg border border-gray-700 transform transition duration-300 hover:scale-105 hover:shadow-xl">
+        </a>
+        <a href="#img4">
+          <img src="IMG_20241227_121003_125.jpg" alt="Snapshot 3" class="w-full rounded-lg border border-gray-700 transform transition duration-300 hover:scale-105 hover:shadow-xl">
+        </a>
       </div>
+
+      <!-- Lightbox Modals using :target -->
+      <div id="img1" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center hidden md:flex z-50">
+        <a href="#" class="absolute top-6 right-6 text-white text-3xl font-bold">&times;</a>
+        <img src="IMG_20250921_171138_121.jpg" class="max-h-[90vh] max-w-[90vw] rounded-lg">
+      </div>
+
+      <div id="img2" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center hidden md:flex z-50">
+        <a href="#" class="absolute top-6 right-6 text-white text-3xl font-bold">&times;</a>
+        <img src="Screenshot 2025-11-17 202458.png" class="max-h-[90vh] max-w-[90vw] rounded-lg">
+      </div>
+
+      <div id="img3" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center hidden md:flex z-50">
+        <a href="#" class="absolute top-6 right-6 text-white text-3xl font-bold">&times;</a>
+        <img src="IMG_20241226_172809_461.jpg" class="max-h-[90vh] max-w-[90vw] rounded-lg">
+      </div>
+
+      <div id="img4" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center hidden md:flex z-50">
+        <a href="#" class="absolute top-6 right-6 text-white text-3xl font-bold">&times;</a>
+        <img src="IMG_20241227_121003_125.jpg" class="max-h-[90vh] max-w-[90vw] rounded-lg">
+      </div>
+
     </section>
   </main>
 
@@ -49,6 +77,13 @@
   <footer class="bg-gray-800 py-6 mt-12">
     <p class="text-center text-gray-400">© 2025 James Cesar | Techs</p>
   </footer>
+
+  <style>
+    /* Show modal when targeted */
+    :target {
+      display: flex !important;
+    }
+  </style>
 
 </body>
 </html>
