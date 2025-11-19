@@ -5,9 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gallery | James Cesar</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="bg-gray-900 text-gray-100 font-sans">
+
+  <!-- Header -->
   <header class="bg-gray-800 shadow-md">
     <div class="container mx-auto flex justify-between items-center py-4 px-6">
       <h1 class="text-2xl font-bold text-cyan-400">James Cesar</h1>
@@ -18,28 +19,36 @@
           <li><a href="Education.html" class="hover:text-cyan-400">Education</a></li>
           <li><a href="skills.html" class="hover:text-cyan-400">Skills</a></li>
           <li><a href="projects.html" class="hover:text-cyan-400">Projects</a></li>
-          <li><a href="gallery.html" class="text-cyan-400 font-semi ">Gallery</a></li>
+          <li><a href="gallery.html" class="text-cyan-400 font-semibold">Gallery</a></li>
           <li><a href="resume.html" class="hover:text-cyan-400">Resume</a></li>
-          <li><a href="contact.html" boldclass="hover:text-cyan-400">Contact</a></li>
+          <li><a href="contact.html" class="hover:text-cyan-400">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
-<main>
-  <section>
-    <h2>Creative Snapshots</h2>
-    <p>Visual highlights from my design and coding journey.</p>
-    <p><img src="IMG_20250921_171138_121.jpg" alt="Creative Snapshot" width="400"></p>
-  </section>
-</main>
 
-<footer>
-  <p>© 2025 James Cesar | Techs</p>
-</footer>
+  <!-- Main Content -->
+  <main class="max-w-5xl mx-auto px-6 py-12">
+    <section>
+      <h2 class="text-3xl font-bold text-cyan-400 mb-4">Creative Snapshots</h2>
+      <p class="text-gray-300 mb-8">Glimpse of my life as a Shiftee/Transferee Student</p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <img src="IMG_20250921_171138_121.jpg" alt="Snapshot 1" class="w-full rounded-lg border border-gray-700">
+        <img src="Screenshot 2025-11-17 202458.png" alt="Flipbook Project" class="w-full rounded-lg border border-gray-700">
+        <img src="IMG_20241226_172809_461.jpg" alt="Snapshot 2" class="w-full rounded-lg border border-gray-700">
+        <img src="IMG_20241227_121003_125.jpg" alt="Snapshot 3" class="w-full rounded-lg border border-gray-700">
+        <img src="IMG_20250426_210940_710.jpg" alt="Snapshot 4" class="w-full rounded-lg border border-gray-700">
+        <img src="IMG_20241226_172809_461.jpg" alt="Snapshot 2 duplicate" class="w-full rounded-lg border border-gray-700">
+        <img src="IMG_20250205_095553_433.jpg" alt="Snapshot 5" class="w-full rounded-lg border border-gray-700">
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 py-6 mt-12">
+    <p class="text-center text-gray-400">© 2025 James Cesar | Techs</p>
+  </footer>
+
 </body>
-
 </html>
-
-
-
-
