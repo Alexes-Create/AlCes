@@ -4,74 +4,100 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Skills | James Cesar</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-900 text-gray-100 font-sans flex flex-col min-h-screen">
 
-  <!-- Header / Navigation -->
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Your Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-gray-900 text-gray-100 font-sans">
+
+  <!-- Header -->
   <header class="bg-gray-800 shadow-md">
     <div class="container mx-auto flex justify-between items-center py-4 px-6">
-      <h1 class="text-2xl font-bold text-cyan-400">James Cesar</h1>
+      <h1 class="text-2xl font-bold text-cyan-400">Alexes James Cesar</h1>
       <nav>
         <ul class="flex space-x-6">
-              <li><a href="index.html" class="hover:text-cyan-400">Home</a></li>
-          <li><a href="about.html" class="hover:text-cyan-400 ">About</a></li>
-          <li><a href="Education.html"class ="hover:text-cyan-400">Education</a></li>
-          <li><a href="skills.html" class="class="text-cyan-400 font-semibold">Skills</a></li>
+          <li><a href="index.html" class="hover:text-cyan-400">Home</a></li>
+          <li><a href="about.html" class="hover:text-cyan-400">About</a></li>
           <li><a href="projects.html" class="hover:text-cyan-400">Projects</a></li>
-          <li><a href="gallery.html" class="hover:text-cyan-400">Gallery</a></li>
-          <li><a href="resume.html" class="hover:text-cyan-400">Resume</a></li>
+          <li><a href="skills.html" class="hover:text-cyan-400 text-cyan-400 font-semibold">Skills</a></li>
           <li><a href="contact.html" class="hover:text-cyan-400">Contact</a></li>
-
+          <li><a href="resume.html" class="hover:text-cyan-400">Resume</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- Main Content -->
-  <main class="container mx-auto px-6 py-20 flex-grow">
-    <section class="grid md:grid-cols-2 gap-8">
+  <!-- Skills Section -->
+  <section id="skills" class="container mx-auto px-6 py-20">
+    <h2 class="text-3xl font-bold text-cyan-400 mb-12 text-center">My Skills</h2>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+
       <!-- Technical Skills -->
-      <div class="bg-gray-800 rounded-lg p-8 shadow-lg">
-        <h2 class="text-3xl font-bold text-cyan-400 mb-6 text-center">Technical Skills</h2>
-        <ul class="list-disc list-inside space-y-2 text-gray-300 text-lg">
-          <li>Web Development (HTML, CSS, JavaScript)</li>
-          <li>Python Programming</li>
-          <li>UI/UX Design (Figma)</li>
-          <li>Graphic Design (Canva, Photoshop)</li>
-        </ul>
+      <div>
+        <h3 class="text-xl font-semibold text-white mb-6">Technical Skills</h3>
+        <div class="space-y-4">
+          <div class="skill-card"><p>Web Development (HTML, CSS, JavaScript)</p></div>
+          <div class="skill-card"><p>Python Programming</p></div>
+          <div class="skill-card"><p>UI/UX Design (Figma)</p></div>
+          <div class="skill-card"><p>Graphic Design (Canva, Photoshop)</p></div>
+        </div>
       </div>
 
       <!-- Soft Skills -->
-      <div class="bg-gray-800 rounded-lg p-8 shadow-lg">
-        <h2 class="text-3xl font-bold text-cyan-400 mb-6 text-center">Soft Skills</h2>
-        <ul class="list-disc list-inside space-y-2 text-gray-300 text-lg">
-          <li>Creative Thinking</li>
-          <li>Communication</li>
-          <li>Teamwork</li>
-          <li>Adaptability</li>
-        </ul>
+      <div>
+        <h3 class="text-xl font-semibold text-white mb-6">Soft Skills</h3>
+        <div class="space-y-4">
+          <div class="skill-card"><p>Creative Thinking</p></div>
+          <div class="skill-card"><p>Communication</p></div>
+          <div class="skill-card"><p>Teamwork</p></div>
+          <div class="skill-card"><p>Adaptability</p></div>
+        </div>
       </div>
 
-       <!-- Soft Skills -->
-      <div class="bg-gray-800 rounded-lg p-8 shadow-lg">
-        <h2 class="text-3xl font-bold text-cyan-400 mb-6 text-center">Practice and Other tools</h2>
-        <ul class="list-disc list-inside space-y-2 text-gray-300 text-lg">
-          <li>Agile - Development Methodology</li>
-          <li>Canva</li>
-          <li>Adobe</li>
-         
-        </ul>
+      <!-- Practices & Tools -->
+      <div>
+        <h3 class="text-xl font-semibold text-white mb-6">Practices & Tools</h3>
+        <div class="space-y-4">
+          <div class="skill-card"><p>Agile Development Methodology</p></div>
+          <div class="skill-card"><p>Canva</p></div>
+          <div class="skill-card"><p>Adobe</p></div>
+          <div class="skill-card"><p>CapCut</p></div>
+        </div>
       </div>
-    </section>
-  </main>
+
+      <!-- Design Skills -->
+      <div>
+        <h3 class="text-xl font-semibold text-white mb-6">Design Skills</h3>
+        <div class="space-y-4">
+          <div class="skill-card"><p>Layout Design</p></div>
+          <div class="skill-card"><p>Prototyping</p></div>
+          <div class="skill-card"><p>Digital Illustration</p></div>
+        </div>
+      </div>
+
+      <!-- Student Skills -->
+      <div>
+        <h3 class="text-xl font-semibold text-white mb-6">Student Skills</h3>
+        <div class="space-y-4">
+          <div class="skill-card"><p>Research</p></div>
+          <div class="skill-card"><p>Academic Writing</p></div>
+          <div class="skill-card"><p>Time Management</p></div>
+          <div class="skill-card"><p>Self-learning</p></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
 
   <!-- Footer -->
-  <footer class="bg-gray-800 py-6 mt-auto">
-    <p class="text-center text-gray-400">© 2025 James Cesar | Techs</p>
+  <footer class="bg-gray-800 text-center py-6 mt-20">
+    <p class="text-gray-400">© 2025 Alexes James Cesar. All rights reserved.</p>
   </footer>
 
 </body>
 </html>
-
-
