@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vibe Collector: Infinite Void</title>
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+        background: #020205;
+        font-family: "Courier New", Courier, monospace;
+      }
+      #ui {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        color: #00ffcc;
+        pointer-events: none;
+        z-index: 100;
+      }
+      #game-over {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #ff0077;
+        text-align: center;
+        display: none;
+        background: rgba(0, 0, 0, 0.95);
+        padding: 40px;
+        border: 2px solid #ff0077;
+        box-shadow: 0 0 30px #ff0077;
+        z-index: 200;
+      }
+      .orb {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(1px);
+        transition: background 0.3s;
+      }
+      .boss {
+        position: absolute;
+        border-radius: 50%;
+        background: radial-gradient(circle, #ff3300, #330000);
+        box-shadow: 0 0 20px #ff0000;
+        z-index: 10;
+      }
+      button {
+        background: #ff0077;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        margin-top: 20px;
+        font-weight: bold;
+      }
+      .warning {
+        color: #ff0000;
+        animation: blink 0.5s infinite;
+      }
+      @keyframes blink {
+        50% {
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="ui">
+      <h1>VIBE COLLECTOR: OVERLOAD</h1>
+      <div>SURVIVAL TIME: <span id="timer">0</span>s</div>
+      <div>SCORE: <span id="score">0</span></div>
+      <div id="difficulty-msg" class="warning">BOSS LEVEL: 1</div>
+    </div>
+
+    <div id="game-over">
+      <h1 id="status-text">VOID CONSUMED THE SYSTEM</h1>
+      <p>Final Survival Time: <span id="final-timer">0</span>s</p>
+      <p>Final Score: <span id="final-score">0</span></p>
+      <button onclick="location.reload()">RELOAD CORE</button>
+    </div>
+
+    <script>
+      let score = 0,
+        secondsActive = 0,
+        isGameOver = false;
+      let baseBossSpeed = 1.5;
+      const orbs = [];
+      const bosses = [];
+      const mouse = { x: window.innerWidth / 2, y: window.innerHeight / 2 };
+
+      const timerEl = document.getElementById("timer");
+      const scoreEl = document.getElementById("score");
+      const diffEl = document.getElementById("difficulty-msg");
+      const gameOverEl = document.getElementById("game-over");
+
+      window.addEventListener("mousemove", (e) => {
+        mouse.x = e.x;
+        mouse.y = e.y;
+      });
+
+      class Boss {
+        constructor(x, y) {
+          this.x = x;
+          this.y = y;
+          this.size = 50;
+          this.speedBoost = 0; // Increases over time
+          this.el = document.createElement("div");
+          this.el.className = "boss";
+          this.el.style.width = this.size + "px";
+          this.el.style.height = this.size + "px";
+          document.body.appendChild(this.el);
+        }
+        update() {
+          let currentSpeed = baseBossSpeed + secondsActive * 0.05; // Faster over time
+          let dx = mouse.x - (this.x + this.size / 2);
+          let dy = mouse.y - (this.y + this.size / 2);
+          let angle = Math.atan2(dy, dx);
+
+          this.x += Math.cos(angle) * currentSpeed;
+          this.y += Math.sin(angle) * currentSpeed;
+          this.el.style.transform = `translate(${this.x}px, ${this.y}px)`;
+
+          let dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < this.size / 2 + 5) endGame();
+        }
+      }
+
+      class Orb {
+        constructor() {
+          this.el = document.createElement("div");
+          this.el.className = "orb";
+          document.body.appendChild(this.el);
+          this.reset();
+        }
+        reset() {
+          this.x = Math.random() * window.innerWidth;
+          this.y = Math.random() * window.innerHeight;
+          this.el.style.width = "15px";
+          this.el.style.height = "15px";
+          this.el.style.background = "#00ffcc";
+        }
+        update() {
+          let dx = mouse.x - this.x;
+          let dy = mouse.y - this.y;
+          let dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 25) {
+            score += 10;
+            scoreEl.innerText = score;
+            this.reset();
+          }
+          this.el.style.transform = `translate(${this.x}px, ${this.y}px)`;
+        }
+      }
+
+      // Initialize first Boss and Orbs
+      bosses.push(new Boss(0, 0));
+      for (let i = 0; i < 15; i++) orbs.push(new Orb());
+
+      // Dynamic Difficulty Scaling
+      const gameClock = setInterval(() => {
+        if (isGameOver) return;
+        secondsActive++;
+        timerEl.innerText = secondsActive;
+
+        // Spawn a new Boss every 10 seconds
+        if (secondsActive % 10 === 0) {
+          let side = Math.floor(Math.random() * 4);
+          let bx = 0,
+            by = 0;
+          if (side === 0) bx = Math.random() * window.innerWidth; // Top
+          if (side === 1) {
+            bx = window.innerWidth;
+            by = Math.random() * window.innerHeight;
+          } // Right
+          bosses.push(new Boss(bx, by));
+          diffEl.innerText = `BOSS LEVEL: ${bosses.length}`;
+        }
+      }, 1000);
+
+      function endGame() {
+        isGameOver = true;
+        clearInterval(gameClock);
+        document.getElementById("final-timer").innerText = secondsActive;
+        document.getElementById("final-score").innerText = score;
+        gameOverEl.style.display = "block";
+      }
+
+      function loop() {
+        if (!isGameOver) {
+          orbs.forEach((o) => o.update());
+          bosses.forEach((b) => b.update());
+          requestAnimationFrame(loop);
+        }
+      }
+      loop();
+    </script>
+  </body>
+</html>
+
